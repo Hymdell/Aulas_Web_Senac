@@ -13,17 +13,15 @@ $senha = $_POST['senha'];
 $cargo = "Usuário";
 
 $sql = "INSERT INTO usuarios (usuario, email, senha, cargo) VALUES ('$usuario', '$email', '$senha','$cargo')";
-if($usuario == null || $email == null || $senha == null){
-    header("Location: http://localhost/aulas/aula11/exercicio1/cadastro.php");
-}
 
-if($con->query($sql) == TRUE){
+if($con->query($sql) == TRUE && $usuario != null && $email != null && $senha != null){
     $_SESSION['logado'] = true;
     $con->close();
     header("Location: http://localhost/aulas/aula11/exercicio1/menu_usuario.php");
 }else{
+    $_SESSION['aviso_cadastro'] = true;
     $con->close();
     header("Location: http://localhost/aulas/aula11/exercicio1/cadastro.php");
-}
+} 
 
 ?>

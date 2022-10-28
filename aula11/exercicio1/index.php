@@ -1,6 +1,12 @@
 <?php
 session_start();
-$_SESSION['logado'] = false;
+$_SESSION['logado'];
+$_SESSION['aviso_login'];
+$_SESSION['aviso_cadastro'];
+
+if($_SESSION['aviso_login'] == true){
+    echo '<script src=js/login_aviso.js></script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
