@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $servername = "localhost";
 $database = "exercicioa11";
@@ -25,18 +26,23 @@ if(empty($con)){
         <td><strong>idUsuario</strong></td>
         <td><strong>Usuario</strong></td>
         <td><strong>Email</strong></td>
+        <td><strong>Cargo</strong></td>
     </tr>
     <?php
-    $result = $con->query("SELECT `idusuarios`,`usuario`,`email` FROM `usuarios`");
+    $result = $con->query("SELECT `idusuarios`,`usuario`,`email`,`cargo` FROM `usuarios`");
     while($aux_query = $result->fetch_assoc()){
         echo "<tr>";
         echo " <td>" . $aux_query['idusuarios'] . "</td>";
         echo " <td>" . $aux_query['usuario'] . "</td>";
         echo " <td>" . $aux_query['email'] . "</td>";
+        echo " <td>" . $aux_query['cargo'] . "</td>";
         echo "</tr>";
     }
     mysqli_close($con);
     ?>
-</table>
+</table><br>
+<form action="index.php">
+    <input type="submit" value="Deslogar">
+</form>
 </body>
 </html>
