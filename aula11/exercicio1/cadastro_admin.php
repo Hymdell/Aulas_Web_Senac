@@ -11,13 +11,15 @@ session_start();
 </head>
 <body>
     <center>
-        <form action="menu_admin.php" method="post">
+        <form action="verificar_cadastro_admin.php" method="post">
             <label for="usuario">Usuário:</label><br>
             <input type="text" name="usuario" placeholder="Usuário"><br>
             <label for="email">Email:</label><br>
             <input type="email" name="email" placeholder="Email@gmail.com"><br>
             <label for="senha">Senha:</label><br>
-            <input type="password" name="senha" placeholder="Senha"><br><br>
+            <input type="password" name="senha" placeholder="Senha"><br>
+            <label for="cargo">Cargo:</label><br>
+            <input type="text" name="cargo" placeholder="Admin ou Usuário"><br>
             <input type="submit" name="submit" value="Cadastrar">
         </form>
     </center>

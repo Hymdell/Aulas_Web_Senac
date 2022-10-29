@@ -27,6 +27,8 @@ if(empty($con)){
         <td><strong>Usuario</strong></td>
         <td><strong>Email</strong></td>
         <td><strong>Cargo</strong></td>
+        <td><strong>Editar</strong></td>
+        <td><strong>Excluir</strong></td>
     </tr>
     <?php
     $result = $con->query("SELECT `idusuarios`,`usuario`,`email`,`cargo` FROM `usuarios`");
@@ -36,11 +38,16 @@ if(empty($con)){
         echo " <td>" . $aux_query['usuario'] . "</td>";
         echo " <td>" . $aux_query['email'] . "</td>";
         echo " <td>" . $aux_query['cargo'] . "</td>";
+        echo '<td><form action="editar_usuario.php" method="post"><input type="submit" value="Editar"><input type="hidden" name="id" value="'.$aux_query['idusuarios'].'"></form></td>';
+        echo '<td><form action="excluir_usuario.php" method="post"><input type="submit" value="Excluir"><input type="hidden" name="id" value="'.$aux_query['idusuarios'].'"></form></td>';
         echo "</tr>";
     }
     mysqli_close($con);
     ?>
 </table><br>
+<form action="cadastro_admin.php">
+    <input type="submit" value="Cadastrar Usuário">
+</form><br>
 <form action="index.php">
     <input type="submit" value="Deslogar">
 </form>
