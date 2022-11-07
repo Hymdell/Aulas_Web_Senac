@@ -4,8 +4,7 @@ if($_SESSION['id'] == null){
     header("Location:http://localhost/aulas/aula13/exercicio_banco/");
 }
 ?>
-}
-?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
