@@ -7,7 +7,15 @@
     <title>Inserir</title>
 </head>
 <body>
-    
+    <center>
+        <form form action="inserir_valida.php" method="post">
+            <label for="nome">Insira o nome da ferramenta:</label><br>
+            <input type="text" name="nome" placeholder="Ex: Martelo"><br>
+            <label for="marca">Insira a marca da ferramenta: </label><br>
+            <input type="text" name="marca" placeholder="Ex: Tramontina"><br>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </center>
 </body>
 </html>
 

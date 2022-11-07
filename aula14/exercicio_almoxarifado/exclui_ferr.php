@@ -7,6 +7,16 @@
     <title>Excluir</title>
 </head>
 <body>
-    
+    <center>
+        <form action="exclui_valida.php" method="post">
+            <label for="codigo">Insira o código da ferramenta que vai excluir:</label><br>
+            <input type="text" name="codigo" placeholder="Ex: 1"><br>
+            <label for="nome">Insira o nome da ferramenta:</label><br>
+            <input type="text" name="nome" placeholder="Ex: Martelo"><br>
+            <label for="marca">Insira a marca da ferramenta: </label><br>
+            <input type="text" name="marca" placeholder="Ex: Tramontina"><br>
+            <input type="submit" value="Excluir">
+        </form>
+    </center>
 </body>
 </html>

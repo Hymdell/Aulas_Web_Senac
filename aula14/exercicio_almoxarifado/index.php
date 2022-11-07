@@ -34,7 +34,7 @@
 <body class="fundoCores">
     <center>
     <div class="borda">
-        <form action="painel.php">
+        <form action="painel_valida.php">
             <input class="botoes" type="submit" value="Painel">
         </form>
         <br>
