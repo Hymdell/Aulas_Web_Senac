@@ -30,6 +30,9 @@
                 ?>
             </tr>
         </table>
+        <form action="index.php">
+            <input type="submit" value="Voltar">
+        </form>
     </center>
 </body>
 </html>
