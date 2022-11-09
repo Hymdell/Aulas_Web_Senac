@@ -75,7 +75,7 @@ class Conecta{
         $password = "root";
 
         $x=0;
-        $ferramentas;
+        $ferramentas=array();
         $con = mysqli_connect($servername,$username,$password,$database);
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
