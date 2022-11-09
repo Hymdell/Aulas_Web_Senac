@@ -56,4 +56,20 @@ class Conexao{
         }
     }
 
+    function resetar(){
+        $servername = "localhost";
+        $database = "rodoviaria";
+        $username = "root";
+        $password = "root";
+
+        $con = mysqli_connect($servername,$username,$password,$database);
+        if(empty($con)){
+            die("Conexão falhou :( : " . mysqli_connect_error());
+        }
+        
+        $sql = "UPDATE `onibus` SET `Disponivel`='Sim' WHERE 1";
+
+        $con->query($sql);
+        $con->close();
+    }
 }

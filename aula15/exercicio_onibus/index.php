@@ -18,6 +18,10 @@
             <input type="hidden" name="classe" value="executiva">
             <input type="submit" value="Classe Executiva">
         </form>
+        <br>
+        <form action="reseta.php">
+            <input type="submit" value="Resetar Assentos">
+        </form>
     </center>
 </body>
 </html>
