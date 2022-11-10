@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'conexao.php';
 $conexao = new Conexao();
 $bolConexao;
 $cidades=$conexao->PegarCidades();
