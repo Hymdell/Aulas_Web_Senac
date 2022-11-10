@@ -11,17 +11,17 @@
         <?php 
         session_start();
 
-        echo "Obrigado por comprar o assento " . $_SESSION['assento'] . "<br>";
-        echo "Com origem em" . $_SESSION['origem'] . "<br>";
+        echo "Obrigado por comprar o assento " . $_SESSION['Assento'] . "<br>";
+        echo "Com origem em" . $_SESSION['Origem'] . "<br>";
 
-        if(!empty($_SESSION['conexoes'])){
-            $n = sizeof($_SESSION['conexoes']);
+        if(!empty($_SESSION['Conexoes'])){
+            $n = sizeof($_SESSION['Conexoes']);
             echo "E Conexão/Conexões em ";
-            foreach($_SESSION['conexoes'] as $cone){
+            foreach($_SESSION['Conexoes'] as $cone){
                 echo $cone . ",";}
         }
         
-        echo "<br> e destino em ". $_SESSION['destino'];
+        echo "<br> e destino em ". $_SESSION['Destino'];
         ?>
         <br>
         <form action="index.php">

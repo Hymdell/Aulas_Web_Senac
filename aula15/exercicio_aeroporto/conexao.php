@@ -132,4 +132,26 @@ class Conexao{
             }
         return $voos;
     }
+
+    function VerificaConexoes($origem,$destino){
+        $servername = "localhost";
+        $database = "aeroporto";
+        $username = "root";
+        $password = "root";
+
+
+        if(empty($con)){
+            die("Conexão falhou :( : " . mysqli_connect_error());
+        }
+        $result = $con->query("SELECT `Localidade` FROM `destinos` WHERE `Cidade`='$origem';");
+            while($aux_query = $result->fetch_assoc()){
+                $localidade[0] = $aux_query['Localidade'];
+            }
+        $result = $con->query("SELECT `Localidade` FROM `destinos` WHERE `Cidade`='$destino';");
+            while($aux_query = $result->fetch_assoc()){
+                $localidade[1] = $aux_query['Localidade'];
+            }
+
+        return $localidade;
+    }
 }
