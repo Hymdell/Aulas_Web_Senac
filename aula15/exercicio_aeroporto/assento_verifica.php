@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'conexao.php';
-$_SESSION['Assento'] = $_POST['Assento'];
+$_SESSION['Assento'] = $_POST['assento'];
 $conexoes = implode(",",$_SESSION['Conexoes']);
 $conexao = new Conexao();
 $conexao->RegistraVoo($_SESSION['Origem'],$_SESSION['Destino'],$conexoes);
