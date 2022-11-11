@@ -1,6 +1,8 @@
 <?php
 session_start();
 include 'conexao.php';
+$_SESSION['Assento'] = $_POST['Assento'];
+$conexoes = implode(",",$_SESSION['Conexoes']);
 $conexao = new Conexao();
-$conexao->RegistraVoo($_SESSION['Origem'],$_SESSION['Destino'],$_SESSION['Conexoes']);
+$conexao->RegistraVoo($_SESSION['Origem'],$_SESSION['Destino'],$conexoes);
 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/compra_finalizada.php");

@@ -35,7 +35,7 @@ class Conexao{
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }
-            $result = $con->query("SELECT * FROM `voos` WHERE `Tamanho`='Pequeno'");
+            $result = $con->query("SELECT * FROM `assentos` WHERE `Tamanho`='Pequeno'");
             while($aux_query = $result->fetch_assoc()){
                 $voos[$x][0] = $aux_query['Numero'];
                 $voos[$x][1] = $aux_query['Disponivel'];
@@ -57,7 +57,7 @@ class Conexao{
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }
-            $result = $con->query("SELECT * FROM `voos` WHERE `Tamanho`='Pequeno' AND `Tamanho`='Médio'");
+            $result = $con->query("SELECT * FROM `assentos` WHERE `Tamanho`='Pequeno' AND `Tamanho`='Médio'");
             while($aux_query = $result->fetch_assoc()){
                 $voos[$x][0] = $aux_query['Numero'];
                 $voos[$x][1] = $aux_query['Disponivel'];
@@ -94,6 +94,7 @@ class Conexao{
         $username = "root";
         $password = "root";
 
+        $con = mysqli_connect($servername,$username,$password,$database);
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }
@@ -139,7 +140,7 @@ class Conexao{
         $username = "root";
         $password = "root";
 
-
+        $con = mysqli_connect($servername,$username,$password,$database);
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }

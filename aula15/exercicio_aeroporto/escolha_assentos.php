@@ -19,7 +19,7 @@
                     echo $con . ", ";
                 }
             }
-            echo "</p><br><p> E destino em " . $_SESSION['Destino'] . "</p>";
+            echo "</p><p> E destino em " . $_SESSION['Destino'] . "</p>";
             ?>
             <br>
             <table border=1>
@@ -36,8 +36,8 @@
                             echo "<td>".$assento[0]."</td>";
                             echo "<td>".$assento[1]."</td>";
                             echo '<td>
-                                <form action="locais_valida.php" method="post">
-                                    <input type="hidden" name="assento" value="'.$assento[0].'">
+                                <form action="assento_verifica.php" method="post">
+                                    <input type="hidden" name="Assento" value="'.$assento[0].'">
                                     <input type="hidden" name="disponivel" value="'.$assento[1].'">
                                     <input type="submit" value="Comprar">
                                 </form>

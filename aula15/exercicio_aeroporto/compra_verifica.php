@@ -2,8 +2,8 @@
 session_start();
 include 'conexao.php';
 $conexao = new Conexao();
-$bolConexao;
 $cidades=$conexao->PegarCidades();
+$bolConexao = false;
 $_SESSION['Origem'] = $_POST['Origem'];
 $_SESSION['Destino'] = $_POST['Destino'];
 
@@ -19,8 +19,7 @@ if($_POST['Origem'] == $_POST['Destino']){
     }elseif($localidade[0] == "Internacional" && $localidade[2] == "Internacional"){
         $bolConexao = true;
     }
-    $tipoVoo = new Conexao();
-    $_SESSION['Conexoes'] = array();
+    $conexoes = array();
     if($bolConexao == true){
         $tamanho_aviao = rand(1,3);
         switch ($tamanho_aviao) {
@@ -29,27 +28,30 @@ if($_POST['Origem'] == $_POST['Destino']){
                 $num_conexoes = rand(1,3);
                 shuffle($cidades);
                 for($i=0;$i<$num_conexoes;$i++){
-                    $_SESSION['Conexoes'] = $cidades[$i];
+                    $conexoes[$i] = $cidades[$i];
                 }
-                $_SESSION['assentos']=$tipoVoo->VooPequeno();
+                $_SESSION['Conexoes'] = $conexoes;
+                $_SESSION['assentos']=$conexao->VooPequeno();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             case 2:
                 $num_conexoes = rand(1,3);
                 shuffle($cidades);
                 for($i=0;$i<$num_conexoes;$i++){
-                    $_SESSION['Conexoes'] = $cidades[$i];
+                    $conexoes[$i] = $cidades[$i];
                 }
-                $_SESSION['assentos']=$tipoVoo->VooMedio();
+                $_SESSION['Conexoes'] = $conexoes;
+                $_SESSION['assentos']=$conexao->VooMedio();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             case 3:
                 $num_conexoes = rand(1,3);
                 shuffle($cidades);
                 for($i=0;$i<$num_conexoes;$i++){
-                    $_SESSION['Conexoes'] = $cidades[$i];
+                    $conexoes[$i] = $cidades[$i];
                 }
-                $_SESSION['assentos']=$tipoVoo->VooGrande();
+                $_SESSION['Conexoes'] = $conexoes;
+                $_SESSION['assentos']=$conexao->VooGrande();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             default:
@@ -59,15 +61,15 @@ if($_POST['Origem'] == $_POST['Destino']){
         $tamanho_aviao = rand(1,3);
         switch ($tamanho_aviao) {
             case 1:
-                $_SESSION['assentos']=$tipoVoo->VooPequeno();
+                $_SESSION['assentos']=$conexao->VooPequeno();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             case 2:
-                $_SESSION['assentos']=$tipoVoo->VooMedio();
+                $_SESSION['assentos']=$conexao->VooMedio();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             case 3:
-                $_SESSION['assentos']=$tipoVoo->VooGrande();
+                $_SESSION['assentos']=$conexao->VooGrande();
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             default:
