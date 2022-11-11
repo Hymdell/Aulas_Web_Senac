@@ -37,7 +37,7 @@
                             echo "<td>".$assento[1]."</td>";
                             echo '<td>
                                 <form action="assento_verifica.php" method="post">
-                                    <input type="hidden" name="Assento" value="'.$assento[0].'">
+                                    <input type="hidden" name="assento" value="'.$assento[0].'">
                                     <input type="hidden" name="disponivel" value="'.$assento[1].'">
                                     <input type="submit" value="Comprar">
                                 </form>
