@@ -55,6 +55,14 @@ if($_POST['Origem'] == $_POST['Destino']){
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             default:
+                $num_conexoes = rand(1,3);
+                    shuffle($cidades);
+                    for($i=0;$i<$num_conexoes;$i++){
+                        $conexoes[$i] = $cidades[$i];
+                    }
+                    $_SESSION['Conexoes'] = $conexoes;
+                    $_SESSION['assentos']=$conexao->VooPequeno();
+                    header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
         }
     }else{
@@ -73,6 +81,9 @@ if($_POST['Origem'] == $_POST['Destino']){
                 header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
                 break;
             default:
+                $_SESSION['assentos']=$conexao->VooPequeno();
+                    header("Location:http://localhost/Aulas/aula15/exercicio_aeroporto/escolha_assentos.php");
+                    break;
                 break;
         }
     }

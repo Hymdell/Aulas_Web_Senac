@@ -57,7 +57,7 @@ class Conexao{
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }
-            $result = $con->query("SELECT * FROM `assentos` WHERE `Tamanho`='Pequeno' AND `Tamanho`='Médio'");
+            $result = $con->query("SELECT * FROM `assentos` WHERE `Tamanho`!='Grande'");
             while($aux_query = $result->fetch_assoc()){
                 $voos[$x][0] = $aux_query['Numero'];
                 $voos[$x][1] = $aux_query['Disponivel'];
@@ -79,7 +79,7 @@ class Conexao{
         if(empty($con)){
             die("Conexão falhou :( : " . mysqli_connect_error());
         }
-            $result = $con->query("SELECT * FROM `voos` WHERE 1");
+            $result = $con->query("SELECT * FROM `assentos` WHERE 1;");
             while($aux_query = $result->fetch_assoc()){
                 $voos[$x][0] = $aux_query['Numero'];
                 $voos[$x][1] = $aux_query['Disponivel'];
